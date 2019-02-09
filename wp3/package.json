@@ -1,0 +1,17 @@
+{
+  "name": "wp3",
+  "version": "1.0.0",
+  "description": "webpack test",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "webpack --config ./webpack.config.js",
+    "dev": "webpack-dev-server --config ./webpack.config.js --open"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "webpack": "^3.8.1",
+    "webpack-dev-server": "^2.11.2"
+  }
+}

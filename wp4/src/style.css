@@ -1,0 +1,15 @@
+@font-face {
+    font-family: 'MyFont';
+    src: url('./calligraffitti-regular-webfont.woff') format('woff');
+    font-weight: 600;
+    font-style: normal;
+}
+* {
+    margin: 0;
+    padding: 0;
+}
+.hello {
+    color: red;
+    font-family: 'MyFont', "Helvetica Neue", Helvetica, Arial, "PingFang SC", "Hiragino Sans GB", "Heiti SC", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
+    background: url('./logo.png');
+}

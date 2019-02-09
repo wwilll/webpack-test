@@ -1,0 +1,30 @@
+const path = require('path');
+module.exports = {
+    entry: './src/index.js',
+    output: {
+        path: path.resolve(__dirname, 'dist'),
+        filename: 'first-bundle.js'
+    },
+    devServer: {
+        port: '9092',
+        // disableHostCheck: true,
+        host:'0.0.0.0',
+        overlay: true,
+        contentBase: path.join(__dirname, './src/index.html'),
+        //设置为false则会在页面中显示当前webpack的状态
+        inline: true,
+        historyApiFallback: true,
+        //代理配置
+        proxy: {
+           '/gt-ui': {
+               target: '',
+                changeOrigin: true,
+                logLevel: 'debug',
+                headers: {}
+            }
+        },
+        hot: true,
+        //强制页面不通过刷新页面更新文件
+        hotOnly: true
+    },
+}
