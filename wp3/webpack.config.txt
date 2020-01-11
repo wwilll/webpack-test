@@ -6,7 +6,7 @@ module.exports = {
         filename: 'first-bundle.js'
     },
     devServer: {
-        port: '9092',
+        port: '9093',
         // disableHostCheck: true,
         host:'0.0.0.0',
         overlay: true,
