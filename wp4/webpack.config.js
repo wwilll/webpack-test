@@ -6,6 +6,8 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
+const HelloWorldPlugin = require('./plugins/hello-world');
+const FileListPlugin = require('./plugins/filelist-plugin');
 
 console.log(path.resolve(__dirname, 'dist'))
 
@@ -147,10 +149,12 @@ let config = {
         // new webpack.ProvidePlugin({  //全局注入jquery，注意window.$为undefined
         //     $: 'jquery'
         // })
-        new CopyWebpackPlugin([
-            {from: './test', to: './test'}
-        ]),
-        new webpack.BannerPlugin('make in 2019 by wy')
+        // new CopyWebpackPlugin([
+        //     {from: './test', to: './test'}
+        // ]),
+        new webpack.BannerPlugin('make in 2019 by wy'),
+        new HelloWorldPlugin({ options: true }),
+        new FileListPlugin()
     ],
     mode: 'development', //模式 development,production,none
     devServer: { //开发服务器配置
